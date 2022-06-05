@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Remera",
+		"Price": 3000,
+		"thumbnail": "https://d3ugyf2ht6aenh.cloudfront.net/stores/454/305/products/calaca-andando-en-skate-blanca1-41c3504688c5a86c2e15124616671543-1024-1024.gif",
+		"id": 1
+	},
+	{
+		"title": "Patines",
+		"Price": 2500,
+		"thumbnail": "https://phantom-marca.unidadeditorial.es/d51d0a4ad3a33596caf9f3517ebc81fa/crop/0x78/1000x639/resize/1320/f/jpg/assets/multimedia/imagenes/2021/05/31/16224732603005.jpg",
+		"id": 2
+	},
+	{
+		"title": "Bicicleta",
+		"Price": 4500,
+		"thumbnail": "https://i.pinimg.com/originals/a0/92/57/a09257e284b0040ad926b52b2c54e85e.png",
+		"id": 3
+	},
+	{
+		"title": "Monopatin",
+		"Price": 3500,
+		"thumbnail": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/245/791/products/718e032a-238d-42be-9830-d470019ae09a-78dd77bf4cb874088c16232991142539-640-0.jpg",
+		"id": 4
+	},
+	{
+		"title": "Pecera",
+		"Price": 3000,
+		"thumbnail": "https://d3ugyf2ht6aenh.cloudfront.net/stores/454/305/products/calaca-andando-en-skate-blanca1-41c3504688c5a86c2e15124616671543-1024-1024.gif",
+		"id": 5
+	}
+]

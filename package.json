@@ -1,0 +1,23 @@
+{
+  "name": "backend1405",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamilapandolfini/Backend1405.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yamilapandolfini/Backend1405/issues"
+  },
+  "homepage": "https://github.com/yamilapandolfini/Backend1405#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
