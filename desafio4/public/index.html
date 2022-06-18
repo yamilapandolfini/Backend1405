@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="span text-center">
+                    <form action="/api/productos" method="post" style="margin-top: 10px; margin: 50% auto">
+                        <div class="controls controls-row">
+                            <input id="title" name="title" type="text" class="span3" placeholder="Title"> 
+                        </div>
+                        <div class="controls controls-row">
+                            <input id="price" name="price" type="number" class="span3" placeholder="Price">
+                        </div>
+                        <div class="controls controls-row">
+                            <input id="thumbnail" name="thumbnail" type="text" class="span3" placeholder="Thumbnail">
+                        </div>
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary input-medium pull-right">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
