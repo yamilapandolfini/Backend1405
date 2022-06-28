@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h3.title Listado de productos
+    if (productos.length != 0)
+      table(style='width:100%', border='1')
+        tr
+          th Id
+          th Title
+          th Price
+          th Thumbnail
+        each producto in productos
+          tr
+            td #{producto.id}
+            td #{producto.title}
+            td #{producto.price}
+            td 
+               img(src= producto.thumbnail)
+    else
+      h3.title No se encontraron productos
+    a(href='/') Volver al formulario de carga

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1.title Formulario para cargar Producto
+    form(action='/', method="post")
+        div.input
+            span.label Nombre
+            input(type="text", name="title")
+        div.input
+            span.label Precio
+            input(type="text", name="price")
+        div.input
+            span.label Thumbnail
+            input(type="text", name="thumbnail")
+        div.actions
+            input(type="submit", value="Enviar")
+        a(href='/productos') Ver productos
