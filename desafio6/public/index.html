@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="./main.js"></script>
+    </head>
+    <body>
+        <h2>Formulario Carga de productos</h2>
+        <form onsubmit="return enviarProducto(this)">
+            <input id="title" type="text" placeholder="Nombre de producto"  /> 
+            <input id="price" type="text" placeholder="precio de producto" />
+            <input id="thumbnail" type="text" placeholder="thumbnail" />
+            <input type="submit"></input>
+        </form>
+        <hr>
+        <h2 style="color:darkred;">Listado de productos</h2>
+        <table class="table" id="tablaProductos">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Thumbnail</th>
+                <th style="width: 36px;"></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <hr>
+        <h2 style="color: blue;">Centro de Mensajes</h2>
+        <div id="listaMensajes">
+        </div>
+        <form onsubmit="return enviarMensaje(this)">
+            <input id="username" type="text" placeholder="Nombre de usuario"  /> 
+            <input id="mensaje" type="text" placeholder="Mensaje a enviar" />
+            <input type="submit"></input>
+        </form>
+
+    </body>
+</html>
