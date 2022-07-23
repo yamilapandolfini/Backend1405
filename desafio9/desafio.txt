@@ -1,0 +1,67 @@
+//Creamos la db
+use ecommerce
+
+//creamos las dos conexiones
+db.createCollection("mensajes")
+db.createCollection("productos")
+
+//1)creamos los documentos para mensajes
+db.mensajes.insert({"userName":"yamila","mensaje":"Hola como estas?", "date":"23/07/2022", "time":"15:15:02"})
+db.mensajes.insert({"userName":"Maria","mensaje":"Bien y vos?", "date":"23/07/2022", "time":"15:15:05"})
+db.mensajes.insert({"userName":"Pedro","mensaje":"Hola chicas", "date":"23/07/2022", "time":"15:15:15"})
+db.mensajes.insert({"userName":"Maria","mensaje":"Pedro, como va?", "date":"23/07/2022", "time":"15:15:29"})
+db.mensajes.insert({"userName":"Hernan","mensaje":"Bien y vos?", "date":"23/07/2022", "time":"15:15:45"})
+db.mensajes.insert({"userName":"Yamila","mensaje":"Que contas?", "date":"23/07/2022", "time":"15:16:05"})
+db.mensajes.insert({"userName":"Maria","mensaje":"Bien bien", "date":"23/07/2022", "time":"15:16:30"})
+db.mensajes.insert({"userName":"Pedro","mensaje":"Aca estamos, aprendiendo un poco", "date":"23/07/2022", "time":"15:17:05"})
+db.mensajes.insert({"userName":"Maria","mensaje":"Nosotras tambien", "date":"23/07/2022", "time":"15:17:20"})
+db.mensajes.insert({"userName":"Yamila","mensaje":"Vamos que ya comienza el curso", "date":"23/07/2022", "time":"15:18:05"})
+
+
+//1)creamos los documentos para productos
+db.productos.insert({"title":"camisa","price":120, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"1"})
+db.productos.insert({"title":"remera","price":580, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"2"})
+db.productos.insert({"title":"pantalon","price":900, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"3"})
+db.productos.insert({"title":"jean","price":1280, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"4"})
+db.productos.insert({"title":"vestido","price":1700, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"5"})
+db.productos.insert({"title":"blusa","price":2300, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"6"})
+db.productos.insert({"title":"bufanda","price":2860, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"7"})
+db.productos.insert({"title":"gorro","price":3350, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"8"})
+db.productos.insert({"title":"gorra","price":4320, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"9"})
+db.productos.insert({"title":"guantes","price":4990, "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"10"})
+
+//3)listamos los documentos de toda la colleccion
+
+db.mensajes.find()
+db.productos.find()
+
+//4)Contamos la cantidad de documentos en cada collection
+db.mensajes.estimatedDocumentCount()
+db.productos.estimatedDocumentCount()
+
+//5.a) Agregamos un producto a la collection de productos
+db.productos.insert({"title":"collar","price":"5000", "thumbnail":"https://cdn2.iconfinder.com/data/icons/essentials-volume-i/128/tshirt-128.png", "id":"11"})
+
+//5.b.i) listar productos con precio menor a 1000
+db.productos.find({"price":{$lt:1000}})
+
+//5.b.ii) listar productos con precio entre 1000 y 3000
+db.productos.find({"price": {$gt: 1000, $lt: 3000}})
+
+//5.b.iii) listar productos con precio mayor 3000
+db.productos.find({"price": {$gt: 3000}})
+
+//5.b.iv) listar tercer producto mas barato
+db.productos.find({},{title: 1, _id: 0}).skip(2).sort({price:1}).limit(1).pretty()
+
+//5c) agrego campo stock a todos los productos con valor 100
+db.productos.update({},{$set: {stock:100}},false,true)
+
+//5d) cambiamos el stock a 0 con precios mayores a 4000
+db.productos.update({price: {$gt: 4000}}, {$set: {stock:0}},false,true)
+
+//5e) Borrar los productos con precio menos a 1000
+db.productos.deleteMany({"price": {$lt:1000}})
+
+//6) Creamos el usuario pepe con read-only access
+db.createUser({user:"pepe",pwd:"asd456",roles:[{role: "read", db: "ecommerce"}]})
